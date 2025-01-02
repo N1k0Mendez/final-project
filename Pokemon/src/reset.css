@@ -1,0 +1,39 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration:none ;
+  list-style: none;
+  font-family: 'Open Sans', sans-serif;
+}
+body{
+  min-height: 100vh;
+  background-color: #222;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.container { padding-inline: 14%;}
+
+.list{
+  margin: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.card{
+  background-color: #333;
+  padding: 1rem;
+  border-radius: 8px ;
+  text-align: center;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+.card:hover{
+  transform: scale(1.1);
+}

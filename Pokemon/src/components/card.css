@@ -1,0 +1,17 @@
+.card{
+    background-color: #333;
+    padding: 1.25rem;
+    border-radius: 8px ;
+    text-align: center;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    color:var(--Color-White);
+}
+.card:hover{
+    transform: scale(1.1);
+}
+/*- - - Content-Card - - -*/
+.card-img{}
+.card-text{}
+.card-small{}
+.card-p{}

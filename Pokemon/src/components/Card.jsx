@@ -1,12 +1,20 @@
-export function Card({item}){
+import { Link } from 'react-router-dom';
+import './card.css';
+export function Card({ item }) {
+    // Extract ID Pokémon 
     const id = item.url.split('/')[6];
 
-    const IMG_URL = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
+    // URL ID
+    const IMG_URL = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
     
-    return(
-        <div className="card">
-            <img src={IMG_URL} alt={`imagen de ${item.name}`} />
-        <p>{item.name}</p>
-        </div>
-    )
+    // ---------------------------------------Render card ---------------------------------------
+    return (
+        <Link className="card" to={`/item/${item.name}`}>
+            <img className="card-img"src={IMG_URL} alt={`Imagen de ${item.name}`} />
+            <div className="card-text">
+                <small className="card-small">{"ID: " +id}</small>
+                <p className="card-p">{item.name}</p>
+            </div>
+        </Link>
+    );
 }

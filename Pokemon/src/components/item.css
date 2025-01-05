@@ -1,0 +1,9 @@
+.container { padding-inline: 8%;}
+
+.nav-item{
+  padding-block: 2rem;
+  padding-inline: 3rem;
+  text-align: center;
+  color: #fff;
+  border-bottom: 2px solid  #fff;
+}

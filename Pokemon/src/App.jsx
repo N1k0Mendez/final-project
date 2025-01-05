@@ -7,14 +7,11 @@ import "./App.css"
 
 function App() {
   //Constants and States
-  //Valor en la API
   const limit = 24;
-  //Valor inicial de la API
   const [offset, setOffset] = useState(0);
-  //Valores que se usan en Item.jsx y list.jsx (son las lecturas de la API)
   const [listPokemon, setListPokemon] = useState([])
-  //Aparecer y desaparecer la paginacion
   const [showPagination, setShowPagination] = useState(true);
+  const [searchError, setSearchError] = useState(false);
 
   const location = useLocation();
 
@@ -32,27 +29,23 @@ function App() {
   //Search Function
   const changeSearch = async (result) => { 
     try {
-      console.log("Inicio de busqueda para:" + result)
-      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${result}`);
-      const data = await response.json();
-  
-      console.log("Busqueda Realizada", result, data);
-      setListPokemon([{ name: data.name, url: `https://pokeapi.co/api/v2/pokemon/${data.id}` }]);
+        if (!result.trim()) throw new Error("Búsqueda vacía");
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${result.toLowerCase()}`);
+        if (!response.ok) throw new Error("Pokémon no encontrado");
+        const data = await response.json();
+        setListPokemon([{ name: data.name, url: `https://pokeapi.co/api/v2/pokemon/${data.id}` }]);
+        setSearchError(false); // Limpia el error si se encuentra un Pokémon
     } catch (error) {
-      console.error("Error en la búsqueda:", error);
-      setListPokemon([]); // Limpia la lista si la búsqueda falla.
+        setSearchError(true); // Indica que la búsqueda falló
     }
-  };
+};
 
   // Fetch Pokemon List
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log("Cargando lista de Pokémon desde:", API_URL);
         const response = await fetch(API_URL);
         const data = await response.json();
-
-        console.log("Lista de Pokémon cargada:", data.results);
         setListPokemon(data.results);
       } catch (error) {
         console.error("Error al cargar los Pokémon:", error);
@@ -66,7 +59,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route index path="/" element={ <List listPokemon={listPokemon} changeSearch={changeSearch}/> } ></Route>
+        <Route index path="/" element={ <List listPokemon={listPokemon} changeSearch={changeSearch} searchError={searchError}/> } ></Route>
         <Route path="/item/:name" element={ <Item /> } ></Route>
       </Routes>
       {showPagination && (

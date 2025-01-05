@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
-
+import './item.css';
 export function Item(){
     const { name } = useParams()
     const [pokemon, setPokemon] = useState(null)

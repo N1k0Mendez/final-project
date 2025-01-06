@@ -10,11 +10,11 @@
 .page {
   padding: 0.75rem 1.25rem;
   cursor: pointer;
-  background-color: var(--primary-color);
-  color: white;
+  background-color: var(--button-color);
+  color: var(--text-color);
   border-radius: 8px;
-  font-size: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: var(--font-normal);
+  box-shadow: var(--shadow);
   border: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }

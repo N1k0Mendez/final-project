@@ -15,8 +15,40 @@ body{
   padding-bottom: 4%;
 }
 :root{
-    --padding-percent-: 2rem;
-    --primary-color: #3498db;
-    --secondary-color: #f5f5f5;
-    --text-color: #111;
-}
+  /* - - - Colors - - - */
+  --primary-bg: #1d184f;
+  --secondary-bg: #6c63ff;
+  --hover-bg: #8e44ad;
+  --details-bg: #111;
+  --text-color: #fff;
+  --button-color:#3498db;
+  /* - - - Font - - -*/
+  --font-small: 0.85rem;
+  --font-normal: 1rem;
+  --font-medium: 1.2rem;
+  --font-large: 1.5rem;
+  --font-xlarge: 1.25rem;
+  /* - - - Padding - - -*/
+  --padding-small: 0.5rem;
+  --padding-normal: 1rem;
+  --padding-medium: 1.5rem;
+  --padding-large: 2rem;
+  --padding-xlarge: 2.5rem;
+  /* - - - gap - - -*/
+  --gap-small: 0.5rem;
+  --gap-xsmall: 0,75;
+  --gap-normal: 1rem;
+  --gap-medium: 1.5rem;
+  --gap-large: 2rem;
+  --gap-xlarge: 2.5rem;
+  /* - - - margin - - -*/
+  --margin-small: 0.5rem;
+  --margin-normal: 1rem;
+  --margin-medium: 1.5rem;
+  --margin-large: 2rem;
+  --margin-xlarge: 2.5rem;
+  /* - - - Extras - - -*/
+  --shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  --border-radius: 12px;
+  --transition: 0.3s ease;
+  }

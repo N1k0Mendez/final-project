@@ -48,7 +48,7 @@ export function Item(){
                     </div>
                 </>
             }
-            <button><Link  className="nav-item" to="/" >Ver lista Pokemon</Link></button>
+            <button><Link  className="nav-item" to="/" >Volver a la lista Pokemon</Link></button>
         </div>
     )
 }

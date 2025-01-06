@@ -1,49 +1,60 @@
 /* - - - HEADER - - -*/
-header img{
-  padding-inline: var(--padding-percent-);
-  max-width: 100%;
+.box-pokedex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%
+}
+.titulo-pokedex{
+  width: 200px;
   height: auto;
+  margin: 0 auto;
+  display: block;
+  max-width: 100%;
+}
+.header-img{
+  margin-left: 0
 }
 .box-search {
   width: 100%;
   height: auto;
-  margin-bottom: 2rem;
+  margin-bottom: var(--margin-large);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #111;
-  gap: 0.5rem;
+  background-color: var(--details-bg);
+  gap: var(--gap-small);
   position: relative;
 }
 
 input {
-  width: 25%; 
-  padding: 0.5rem;
-  font-size: 1rem;
-  border: 2px solid #444;
-  border-radius: 4px;
+  width: 25%;
+  padding: var(--padding-small);
+  font-size: var(--font-normal);
+  border: 2px solid  #444;
+  border-radius: var(--border-radius);
   background-color: #222;
-  color: white;
+  color: var(--text-color);
   transition: border-color 0.3s ease, background-color 0.3s ease;
 }
   
 input:focus {
   outline: none;
-  border-color: #3498db;
+  border-color: var(--button-color);
   background-color: #333;
 }
 .box-buttons{
-  gap: 1rem;
+  gap: var(--gap-normal);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem;
+  padding: var(--padding-small);
   flex-wrap: wrap;
 }
 button {
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  background-color: #3498db;
+  padding: 0.8rem var(--padding-medium);
+  font-size: var(--font-normal);
+  background-color: var(--button-color);
   color: white;
   border: none;
   border-radius: 5px;
@@ -59,10 +70,9 @@ button:hover {
 button:active {
   transform: scale(1);
 }
-
 /* - - - ERROR MSG - - - */
 .error-messages {
-  margin-top: 0.5rem;
+  margin-top: var(--margin-small);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,7 +81,7 @@ button:active {
 
 .error-message {
   color: #cc4b4b;
-  font-size: 0.9rem;
+  font-size: var(--font-normal);
   margin: 0.25rem 0;
   text-align: center;
 }
@@ -82,15 +92,15 @@ section{
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: 2rem;
+  padding: var(--padding-large);
 }
 .list{
   grid-template-columns: repeat(4,1fr);
-  gap: 3rem 1rem;
+  gap: 3rem var(--gap-normal);
   display: grid;
-  padding: 1rem;
-  background-color: #f9f9f9;
-  border-radius: 8px;
+  padding: var(--padding-normal);
+  background-color: #dcdcdc;
+  border-radius: var(--border-radius);
 }
 
 @media (max-width: 768px) {

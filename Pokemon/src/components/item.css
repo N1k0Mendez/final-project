@@ -1,22 +1,22 @@
-/* CONTAINER ITEM */
+/* - - - CONTAINER ITEM - - - */
 .container.item {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #1d184f;
-  border-radius: 12px;
+  background-color: var(--primary-bg);
+  border-radius: var(--border-radius);
   padding: 1.5rem;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow);
   max-width: 400px;
-  margin: 1rem auto;
-  color: #fff;
+  margin: var(--margin-normal) auto;
+  color: var(--text-color);
 }
 
 .container.item img {
-  width: 150px;
-  height: 150px;
-  margin-bottom: 1rem;
+  width: 100px;
+  height: 100px;
+  margin-bottom: var(--margin-normal);
 }
 
 .container.item .info {
@@ -24,18 +24,18 @@
 }
 
 .container.item .info h2 {
-  font-size: 1.5rem;
+  font-size: var(--font-large);
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--margin-small);
 }
 
 .container.item .info p {
-  font-size: 1rem;
+  font-size: var(--font-normal);
   margin: 0.25rem 0;
 }
 
 .container.item .info h3 {
-  font-size: 1.25rem;
+  font-size: var(--font-xlarge);
   font-weight: 700;
   margin: 1rem 0 0.5rem;
 }
@@ -44,25 +44,25 @@
 .container.item .info .type {
   display: flex;
   justify-content: space-between;
-  font-size: 0.95rem;
+  font-size: var(--font-normal);
   margin: 0.25rem 0;
 }
 
-/* BUTTON */
+/* - - - BUTTON - - - */
 .container.item button {
-  margin-top: 1.5rem;
+  margin-top: var(--margin-medium);
   padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  color: #fff;
-  background-color: #6c63ff;
+  font-size: var(--font-normal);
+  color: var(--text-color);
+  background-color: var(--secondary-bg);
   border: none;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color var(--transition), transform var(--transition);
 }
 
 .container.item button:hover {
-  background-color: #8e44ad;
+  background-color: var(--hover-bg);
   transform: translateY(-2px);
 }
 
@@ -72,5 +72,5 @@
 
 .container.item .nav-item {
   text-decoration: none;
-  color: #fff;
+  color: var(--text-color);
 }

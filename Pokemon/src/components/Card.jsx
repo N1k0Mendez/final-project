@@ -10,10 +10,12 @@ export function Card({ item }) {
     // ---------------------------------------Render card ---------------------------------------
     return (
         <Link className="card" to={`/item/${item.name}`}>
-            <img className="card-img"src={IMG_URL} alt={`Imagen de ${item.name}`} />
-            <div className="card-text">
-                <small className="card-small">{"ID: " +id}</small>
-                <p className="card-p">{item.name}</p>
+            <div className="card-body">
+                <img className="card-img"src={IMG_URL} alt={`Imagen de ${item.name}`} />
+                <div className="card-text">
+                    <small className="card-small">{"ID: " +id}</small>
+                    <p className="card-p">{item.name}</p>
+                </div>
             </div>
         </Link>
     );

@@ -1,12 +1,36 @@
 <!doctype html>
 <html lang="es">
   <head>
+    <!-- Meta Datos Básicos -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pokedex: Explora y busca información detallada sobre Pokémon." />
+    <meta name="theme-color" content="#222" />
+    <!-- SEO y Redes Sociales -->
     <title>Pokedex</title>
+    <meta property="og:title" content="Pokedex" />
+    <meta property="og:description" content="Explora y busca información detallada sobre Pokémon." />
+    <meta property="og:image" content="http://localhost:5173/public/pokeball.png" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/public/pokeball.png" />
+
+    <!-- Precarga de Recursos -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" as="style" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" />
+
+    <!-- Soporte de CSS -->
+    <noscript>
+      <link rel="stylesheet" href="/src/styles/noscript.css" />
+    </noscript>
   </head>
   <body>
-    <div id="root"></div>
+    <!-- Contenedor Principal -->
+    <main id="root"></main>
+
+    <!-- Scripts -->
     <script type="module" src="/src/main.jsx"></script>
+    <noscript>
+      <p>Tu navegador no soporta JavaScript. Por favor, activa JavaScript para disfrutar de la experiencia completa.</p>
+    </noscript>
   </body>
 </html>

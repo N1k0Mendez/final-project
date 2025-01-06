@@ -33,12 +33,16 @@ export function Item(){
                         <h3>Stats:</h3>
                             {
                             pokemon.stats.map((stat, index) => (
-                                <p key={index}> {stat.stat.name} : {stat.base_stat}</p>
-                            ))
+                                <p key={index} className="stat">
+                                    <span>{stat.stat.name}</span>
+                                    <span>{stat.base_stat}</span>
+                                </p>
+                                ))
                             }
+                            <h3>Type</h3>
                             {
                             pokemon.types.map((type, index) => (
-                                <p key={index}> {type.type.name}  {type.name}</p>
+                                <p className="type" key={index}> {type.type.name} </p>
                             ))
                             }
                     </div>

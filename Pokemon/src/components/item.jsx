@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
+
 import './item.css';
+
 export function Item(){
     const { name } = useParams()
     const [pokemon, setPokemon] = useState(null)
@@ -29,7 +31,7 @@ export function Item(){
                     <div className="info">
                         <h2>{pokemon.name}</h2>
                         <p>weight : {pokemon.weight /10} kg</p>
-                        <p>height : {pokemon.height /10} Metros</p>
+                        <p>height : {pokemon.height /10} Meters</p>
                         <h3>Stats:</h3>
                             {
                             pokemon.stats.map((stat, index) => (
@@ -48,7 +50,7 @@ export function Item(){
                     </div>
                 </>
             }
-            <button><Link  className="nav-item" to="/" >Volver a la lista Pokemon</Link></button>
+            <Link  className="nav-item" to="/" ><button>Volver a la lista Pokémon</button></Link>
         </div>
     )
 }

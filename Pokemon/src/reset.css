@@ -8,11 +8,10 @@
 }
 body{
   min-height: 100vh;
-    background-color: #110f4b;
-  background-image: url('/FondoPokemon.jpg');
+  background-color: #110f4b;
+  background-image: url('./FondoPokemon.jpg');
   color: var(--text-color);
-
-  padding-bottom: 4%;
+  width: 100%;
 }
 :root{
   /* - - - Colors - - - */

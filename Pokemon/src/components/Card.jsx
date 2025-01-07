@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
+
 import './card.css';
+
 export function Card({ item }) {
     // Extract ID Pokémon 
     const id = item.url.split('/')[6];

@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { HiSearch } from 'react-icons/hi';
+
 import { Card } from './Card';
 import './list.css'
 

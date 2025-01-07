@@ -12,19 +12,32 @@ function App() {
   const [listPokemon, setListPokemon] = useState([])
   const [showPagination, setShowPagination] = useState(true);
   const [searchError, setSearchError] = useState(false);
-
   const location = useLocation();
+
+   //API
+   const API_URL = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
+  
+
+   const fetchPokemonList = async () => {
+    try {
+      const response = await fetch(API_URL);
+      const data = await response.json();
+      setListPokemon(data.results);
+      setSearchError(false); // Limpiar errores anteriores
+    } catch (error) {
+      console.error('Error al cargar los Pokémon:', error);
+    }
+  };
+
 
   useEffect(() => {
     if (location.pathname.startsWith("/item")) {
-    setShowPagination(false); // Oculta la paginación en la vista de un Pokémon
+    setShowPagination(false);
+    fetchPokemonList();
     } else {
-    setShowPagination(true); // Muestra la paginación en la vista principal
+    setShowPagination(true);
     }
   }, [location]);
-
-  //API
-  const API_URL = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
   
   //Search Function
   const changeSearch = async (result) => { 
@@ -34,25 +47,15 @@ function App() {
         if (!response.ok) throw new Error("Pokémon no encontrado");
         const data = await response.json();
         setListPokemon([{ name: data.name, url: `https://pokeapi.co/api/v2/pokemon/${data.id}` }]);
-        setSearchError(false); // Limpia el error si se encuentra un Pokémon
+        setSearchError(false);
     } catch (error) {
-        setSearchError(true); // Indica que la búsqueda falló
+        setSearchError(true);
     }
 };
 
   // Fetch Pokemon List
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(API_URL);
-        const data = await response.json();
-        setListPokemon(data.results);
-      } catch (error) {
-        console.error("Error al cargar los Pokémon:", error);
-      }
-    };
-
-    fetchData();
+    fetchPokemonList();
   }, [offset]);
 
   // ---------------------------------------Render App ---------------------------------------

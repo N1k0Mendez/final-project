@@ -11,7 +11,6 @@ export function Item(){
     const API_URL = `https://pokeapi.co/api/v2/pokemon/${name}`
 
     useEffect(() =>{
-        // Info about the pokemons
         const dataPokemon = async () => {
             const response = await fetch(API_URL)
             const data = await response.json()
@@ -32,7 +31,7 @@ export function Item(){
                         <h2>{pokemon.name}</h2>
                         <p>weight : {pokemon.weight /10} kg</p>
                         <p>height : {pokemon.height /10} Meters</p>
-                        <h3>Stats:</h3>
+                        <h3>Stats</h3>
                             {
                             pokemon.stats.map((stat, index) => (
                                 <p key={index} className="stat">

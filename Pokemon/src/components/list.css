@@ -1,17 +1,18 @@
 /* - - - HEADER - - -*/
 .box-pokedex{
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%
+
 }
 .titulo-pokedex{
   width: 200px;
   height: auto;
-  margin: 0 auto;
-  display: block;
+  margin: auto;
   max-width: 100%;
   padding-right: 79px;
+  display: block;
 }
 .header-img{
   margin-left: 0
@@ -20,16 +21,16 @@
   width: 100%;
   height: auto;
   margin-bottom: var(--margin-large);
+  background-color: var(--details-bg);
+  gap: var(--gap-small);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--details-bg);
-  gap: var(--gap-small);
   position: relative;
 }
 
 input {
-  width: 25%;
+  width: 220px;
   padding: var(--padding-small);
   font-size: var(--font-normal);
   border: 2px solid  #444;
@@ -40,16 +41,16 @@ input {
 }
   
 input:focus {
-  outline: none;
   border-color: var(--button-color);
   background-color: #333;
+  outline: none;
 }
 .box-buttons{
   gap: var(--gap-normal);
+  padding: var(--padding-small);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: var(--padding-small);
   flex-wrap: wrap;
 }
 button {
@@ -62,6 +63,7 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
   
 button:hover {
   background-color: #2980b9;
@@ -89,16 +91,16 @@ button:active {
 
 /* - - - SECTION-ONE - - - */
 section{
+  padding: var(--padding-large);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: var(--padding-large);
 }
 .list{
-  grid-template-columns: repeat(4,1fr);
-  gap: 3rem var(--gap-normal);
   display: grid;
+  grid-template-columns: repeat(4,120px);
+  gap: 3rem var(--gap-normal);
   padding: var(--padding-normal);
   background-color: #dcdcdc;
   border-radius: var(--border-radius);
@@ -119,8 +121,21 @@ footer p{
   .list {
     grid-template-columns: repeat(3, 1fr);
   }
+  .button-random{
+    font-size: var(--font-small);
+  }
 }
-  
+@media (max-width: 560px) {
+  .button-random{
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    padding: 0px;
+  }
+  .box-buttons{
+    padding: 0px;
+  }
+}
 @media (max-width: 480px) {
   .list {
     grid-template-columns: repeat(2, 1fr);
@@ -128,11 +143,20 @@ footer p{
   header img{
     padding-inline: 0%;
   }
+}
+@media (max-width: 300px) {
   section{
     padding: 0rem;
   }
-  button {
-    font-size: 0.5rem;
+  button{
+    font-size: 0.6rem;
+    width: 50px;
+    height: 50px;
+  }
+  .button-random{
+    font-size: 0.6rem;
+    width: 50px;
+    height: 50px;
   }
 }
 @media (prefers-color-scheme: dark) {

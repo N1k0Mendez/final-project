@@ -15,15 +15,15 @@ function App() {
   const location = useLocation();
 
    //API
-   const API_URL = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
+  const API_URL = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
   
 
-   const fetchPokemonList = async () => {
+  const fetchPokemonList = async () => {
     try {
       const response = await fetch(API_URL);
       const data = await response.json();
       setListPokemon(data.results);
-      setSearchError(false); // Limpiar errores anteriores
+      setSearchError(false);
     } catch (error) {
       console.error('Error al cargar los Pokémon:', error);
     }
@@ -41,6 +41,11 @@ function App() {
   
   //Search Function
   const changeSearch = async (result) => { 
+    if (Array.isArray(result)) {
+      setListPokemon(result);
+      return;
+    }
+    
     try {
         if (!result.trim()) throw new Error("Búsqueda vacía");
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${result.toLowerCase()}`);

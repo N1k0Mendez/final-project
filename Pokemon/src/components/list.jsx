@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { HiSearch } from 'react-icons/hi';
 
+import { Filter } from './Filter';
 import { Card } from './Card';
 import './list.css'
 
@@ -23,6 +24,20 @@ export function List({ listPokemon, changeSearch, searchError }) {
         setErrorMessage('');
         changeSearch(prevSearch);
     };
+
+    const filterByType = async (type) => {
+        try {
+            const response = await fetch(`https://pokeapi.co/api/v2/type/${type}`);
+            const data = await response.json();
+            const filteredList = data.pokemon.map((p) => ({
+            name: p.pokemon.name,
+            url: p.pokemon.url,
+            }));
+          changeSearch(filteredList); // Cambia el estado con la nueva lista
+        } catch (error) {
+            console.error('Error al filtrar por tipo:', error);
+        }
+        };
     // ---------------------------------------Render list ---------------------------------------
     return (
         <>
@@ -44,6 +59,7 @@ export function List({ listPokemon, changeSearch, searchError }) {
                     {searchError && (<p className="error-message">No existen pokémones con ese nombre.</p>)}
                 </div>
             </header>
+            <Filter onFilter={filterByType} />
             <section>
                 <div className="container list">
                     {listPokemon && listPokemon.length > 0 && listPokemon.map((item, index) => (<Card key={index} item={item} />))}

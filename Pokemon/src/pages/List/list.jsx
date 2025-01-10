@@ -2,8 +2,8 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { HiSearch } from 'react-icons/hi';
 
-import { Filter } from './Filter';
-import { Card } from './Card';
+import { Filter } from '../../components/Filter/Filter';
+import { Card } from '../../components/Card/card';
 import './list.css'
 
 export function List({ listPokemon, changeSearch, searchError }) {

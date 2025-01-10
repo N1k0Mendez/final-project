@@ -1,9 +1,9 @@
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from "react";
 
-import { List } from "./components/list";
-import { Item } from "./components/item";
-import "./App.css"
+import Pagination from './components/Pagination/pagination';
+import { List } from "./pages/List/list";
+import { Item } from "./pages/Item/item";
 
 function App() {
   //Constants and States
@@ -70,13 +70,7 @@ function App() {
         <Route index path="/" element={ <List listPokemon={listPokemon} changeSearch={changeSearch} searchError={searchError}/> } ></Route>
         <Route path="/item/:name" element={ <Item /> } ></Route>
       </Routes>
-      {showPagination && (
-        <div className="pagination">
-          {Array(9).fill().map((_, index) => (
-            <a className="page" key={index} onClick={() => setOffset(limit * index)}> {index + 1} </a>
-            ))}
-        </div>
-      )}
+      {showPagination && <Pagination limit={limit} setOffset={setOffset} />}
     </>
   )
 }

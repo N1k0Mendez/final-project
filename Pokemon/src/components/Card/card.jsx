@@ -9,7 +9,6 @@ export function Card({ item }) {
     // URL ID
     const IMG_URL = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
     
-    // ---------------------------------------Render card ---------------------------------------
     return (
         <Link className="card" to={`/item/${item.name}`}>
             <div className="card-body">
